@@ -324,8 +324,7 @@ class kalman_class():
         # extracting Quaternion from the homogeneous
         print("Estimate:", self.estimated_x[:3])
         print("roll:", self.estimated_x[6], "pitch:", self.estimated_x[7], "yaw:", self.estimated_x[8])
-        #print("Unormalize:", self.estimated_x[8])
-        print("Before changing previous state yaw 11111:", self.estimated_x[6:9])
+        #print("Before changing previous state yaw 11111:", self.estimated_x[6:9])
 
         if count < 3:
             self.previous_x = self.predicted_x
@@ -335,7 +334,7 @@ class kalman_class():
             self.previous_P = self.estimated_P
         
         quatern = quaternion_from_euler(self.estimated_x[6][0], self.estimated_x[7][0], NomalizeAngle(self.estimated_x[8][0])) ## This function will convert the original angle to half
-        print("Before changing previous state yaw 22222:", self.estimated_x[6:9])
+        #print("Before changing previous state yaw 22222:", self.estimated_x[6:9])
         
         time = rospy.Time.from_sec(time)
         # Constructing the message

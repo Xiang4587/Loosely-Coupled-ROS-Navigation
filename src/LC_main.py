@@ -5,7 +5,7 @@ from std_msgs.msg import String
 from geometry_msgs.msg import PoseStamped
 from sensor_msgs.msg import Imu
 import matplotlib.pyplot as plt
-import fusion_EKF
+import fusion_ekf
 import math
 import tf
 
@@ -51,11 +51,11 @@ P = [0.551715385464264,
 
             
 def main():
-    rospy.init_node('LC_test_v4')
+    rospy.init_node('LooselyCoupled')
     tf_broadcast = tf.TransformBroadcaster()
     
-    listener = fusion_EKF.Kalman_caller()
-    kalman = fusion_EKF.kalman_class(x, P)
+    listener = fusion_ekf.Kalman_caller()
+    kalman = fusion_ekf.kalman_class(x, P)
     
     Rate = rospy.Rate(8.0) ## Depends on sensors sampling rate ex. GPS: 4 Hz; IMU: 100- Hz; Wheel_speed_report: 100+ Hz 
     try:
