@@ -7,19 +7,37 @@ P. D. Froves, "Principles of GNSS, Inertial, and Multisensor Integrated Navigati
 ## Installation & Prerequies
 1. Install ROS (kinetic), rospy, and ros drivers for sensors depending on yours. We perform this package on Autoware platform.\
 ```
-sudo apt-get update -y
+$ sudo apt-get update -y
 ```
 ```
-sudo apt-get install -y python-rospy
+$ sudo apt-get install -y python-rospy
 ```
 2. Install the following packages, `numpy`, `scipy`, e.g. with the pip command
 ```
-pip install numpy scipy 
+$ pip install numpy scipy 
 ```
 3. Clone this repo in catkin_ws
 ```
-cd catkin_ws/src
+$ cd catkin_ws/src
 ```
 ```
-git clone 
+$ git clone git@github.com:Xiang4587/Loosely-Coupled-ROS-Navigation.git
 ```
+
+## Usage
+Run this package
+```
+$ roscore
+```
+Online sensing GPS/IMU/wheel odometry data or play rosbag file
+```
+$ cd catkin_ws/src/Loosly-Coupled-ROS-Navigation/src
+chmod +x LC_main.py
+```
+```
+$ rosrun Loosly-Coupled-ROS-Navigation LC_main.py
+```
+
+## Description
+The state of the extended Kalman filter for GPS/IMU/Odometry fusion includes position, velocity, attitude:
+[P_n, P_e, P_d, V_n, V_e, V_d, roll, pitch, yaw, bias_g1, bias_g2, bias_g3, bias_w1, bias_w2, bias_w3]
