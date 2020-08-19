@@ -32,7 +32,7 @@ $ roscore
 Online sensing GPS/IMU/wheel odometry data or play rosbag file
 ```
 $ cd catkin_ws/src/Loosly-Coupled-ROS-Navigation/src
-chmod +x LC_main.py
+$ chmod +x LC_main.py
 ```
 ```
 $ rosrun Loosly-Coupled-ROS-Navigation LC_main.py
